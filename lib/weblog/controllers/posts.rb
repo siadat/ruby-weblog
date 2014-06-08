@@ -37,6 +37,12 @@ module Weblog
         def delete(id)
             template = load('posts/delete')
 
+            post = Post.new.load(id)
+
+            if post.empty?
+                return ErrorsController.new.raise404
+            end
+
             render(template, :id => id)
         end
 
