@@ -1,0 +1,18 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    haml (4.0.5)
+      tilt
+    mysql2 (0.3.16)
+    parseconfig (1.0.4)
+    rack (1.5.2)
+    tilt (2.0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  haml
+  mysql2
+  parseconfig
+  rack

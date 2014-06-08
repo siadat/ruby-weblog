@@ -1,0 +1,9 @@
+%h1 Showing all post
+
+%ul
+  - posts.each do |post|
+    %li
+      %a{href: "/posts/#{post[:id]}"}= post[:title]
+      %p= post[:body][0..30].gsub(/\s\w+\s*$/, '...')
+
+%a{:href => "/posts/new"} Add new post

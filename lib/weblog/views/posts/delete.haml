@@ -1,0 +1,6 @@
+%h1 Are you sure you want to remove post ##{id}?
+
+%form{:method => "post", :action => "/posts/action/submit"}
+  %input{:type => "hidden", :name => "post_id", :value => id}
+  %a{:href => "/posts/#{id}"} No, back to post
+  %button{:type => "submit", :name => "action", :value => "delete"} Yes, I am sure

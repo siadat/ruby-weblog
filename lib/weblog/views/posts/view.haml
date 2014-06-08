@@ -1,0 +1,11 @@
+%h1= "Viewing post #" + post[:id].to_s
+
+%p= "Title: <b>" + post[:title] + "</b>"
+%p Body:
+%blockquote= post[:body]
+
+%a{href: "/posts"} &larr; Back to all posts
+|
+%a{href: "/posts/#{post[:id]}/update"} Update
+|
+%a{href: "/posts/#{post[:id]}/delete"} Delete
