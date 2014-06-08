@@ -20,7 +20,7 @@ module Weblog
                 when '/posts'
                     [default_status, default_headers, [Weblog::PostsController.new.list]]
                 when '/posts/new'
-                    [default_status, default_headers, [Weblog::PostsController.new.add_new]]                
+                    [default_status, default_headers, [Weblog::PostsController.new.add_new]]
                 when Regexp.new(post_pattern)
                     [default_status, default_headers, [Weblog::PostsController.new.view($1)]]
                 when Regexp.new(post_delete_pattern)
@@ -34,7 +34,7 @@ module Weblog
                 case req.path_info
                 when '/posts/action/submit'
                     result = Weblog::PostsController.new.submit(req.POST())
-                    
+
                     res = Rack::Response.new
                     puts result.is_a? String
                     if result.is_a? String

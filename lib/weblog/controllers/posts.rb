@@ -8,7 +8,12 @@ module Weblog
         def list
             template = load('posts/list')
 
-            posts = Post.new.all
+            posts = Post.new.all.each do |post|
+                body = StringIO.new(post[:body])
+                body.truncate([body.length, 300].min)
+                post[:body] = body.read + "..."
+                post
+            end
             render(template, :posts => posts)
         end
 
